@@ -31,3 +31,13 @@ fun BookWithRentalMapper.select(): List<BookWithRentalRecord> {
     }
     return selectMany(selectStatement)
 }
+
+fun BookWithRentalMapper.selectByPrimaryKey(id_: Long): BookWithRentalRecord? {
+    val selectStatement = SqlBuilder.select(columnList).from(Book, "b") {
+        leftJoin(Rental, "r") {
+            on(id, SqlBuilder.equalTo(Rental.bookId))
+        }
+        where(id, SqlBuilder.isEqualTo(id_))
+    }
+    return selectOne(selectStatement)
+}
