@@ -12,8 +12,8 @@ class BookManagerUserDetailsService(
     private val authenticationService: AuthenticationService
 ) : UserDetailsService {
     override fun loadUserByUsername(username: String): UserDetails? {
-        val user = authenticationService.findUser(username)
-        return user?.let { BookManagerUserDetails(user) }
+        val user = authenticationService.findUser(username)  // DBからユーザー情報を取得
+        return user?.let { BookManagerUserDetails(user) }  // 取得したユーザー情報の認可処理
     }
 }
 
