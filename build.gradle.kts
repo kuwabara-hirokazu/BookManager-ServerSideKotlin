@@ -38,6 +38,8 @@ dependencies {
 	implementation("redis.clients:jedis")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+	testImplementation("org.assertj:assertj-core:3.19.0")
 }
 
 tasks.withType<KotlinCompile> {
