@@ -30,6 +30,10 @@ dependencies {
 	// Spring Security
 	implementation("org.springframework.boot:spring-boot-starter-security")
 
+	// Redis
+	implementation("org.springframework.session:spring-session-data-redis")
+	implementation("redis.clients:jedis")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
